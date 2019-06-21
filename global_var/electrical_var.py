@@ -1,0 +1,2 @@
+global voltage
+global current

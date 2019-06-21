@@ -1,0 +1,51 @@
+debug info
+% sgementation fault log file :
+
+File doesn't exist !!! 
+% ARP table : 
+
+Address          Hardware Address   Type  Interface  Mapping  
+
+-------          ----------------   ----  ---------  -------  
+192.168.0.0      ff-ff-ff-ff-ff-ff  ARPA  vlan1      Static    
+192.168.0.1      ac-84-c6-1f-3e-0e  ARPA  vlan1      Dynamic   
+192.168.0.50     18-0f-76-e5-53-c8  ARPA  vlan1      Static    
+192.168.0.101    f4-8e-38-a9-1f-13  ARPA  vlan1      Dynamic   
+192.168.0.102    b8-27-eb-90-3a-96  ARPA  vlan1      Dynamic   
+192.168.0.103    f4-8e-38-a9-1f-90  ARPA  vlan1      Dynamic   
+192.168.0.104    b8-27-eb-0f-01-0e  ARPA  vlan1      Dynamic   
+192.168.0.106    b8-27-eb-a4-40-00  ARPA  vlan1      Dynamic   
+192.168.0.255    ff-ff-ff-ff-ff-ff  ARPA  vlan1      Static    
+
+% MAC table : 
+
+Vlan    Mac Address         Type     Ports
+----    -----------         ----     -----
+1       02:42:f0:d2:0c:17   Learnt   Gi0/4    
+1       18:0f:76:e5:54:08   Learnt   Gi0/5    
+
+[K
+--More--[K
+                
+[K1       18:0f:76:e5:54:e8   Learnt   Gi0/5    
+1       54:e1:ad:cb:e4:c4   Learnt   Gi0/8    
+1       78:54:2e:06:f6:43   Learnt   Gi0/8    
+1       78:54:2e:06:f6:4c   Learnt   Gi0/8    
+1       ac:84:c6:1f:3e:0d   Learnt   Gi0/8    
+1       ac:84:c6:1f:3e:0e   Learnt   Gi0/8    
+1       b8:27:eb:0f:01:0e   Learnt   Gi0/5    
+1       b8:27:eb:90:3a:96   Learnt   Gi0/5    
+1       b8:27:eb:a4:40:00   Learnt   Gi0/6    
+1       f4:8e:38:a9:1f:13   Learnt   Gi0/8    
+1       f4:8e:38:a9:1f:90   Learnt   Gi0/5    
+
+Total Mac Addresses displayed: 13
+
+% POE MCU VERSION : 
+PoeVersion        : 24 (0x18)
+PoeExtVersion     : 33  (0x21)
+
+[27m
+                       
+
+DGS-1210-10P> 

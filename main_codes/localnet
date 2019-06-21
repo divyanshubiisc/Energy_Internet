@@ -1,0 +1,10 @@
+Interface: eth0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.0.1	ac:84:c6:1f:3e:0e	(Unknown)
+192.168.0.10	78:54:2e:06:f6:43	D-Link International
+192.168.0.20	18:0f:76:e5:54:e8	(Unknown)
+192.168.0.200	b8:27:eb:0f:01:0e	Raspberry Pi Foundation
+192.168.0.103	b8:27:eb:99:47:fc	Raspberry Pi Foundation
+
+5 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9: 256 hosts scanned in 4.612 seconds (55.51 hosts/sec). 5 responded

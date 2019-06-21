@@ -1,0 +1,67 @@
+import sys
+import telnetlib
+import re
+from collections import namedtuple #used for making structure 
+from astropy.table import Table
+import threading
+import net_tools as network
+import time
+import os
+import fcntl
+
+def process():
+	Host ='192.168.0.50'
+	admin ='admin'
+        f =open("telnet.txt","w+")
+        f.write("")
+        f.close
+        print("This is telnet update file")
+        try:
+            tn= telnetlib.Telnet(Host,23,3)
+	    tn.open(Host)
+            tn.write(admin+"\n")
+        except:
+            print("Not able to login into telnet host")
+            sys.exit()
+        try:
+            tn.read_until("Password:")
+            tn.write("admin"+"\n")
+            tn.read_until("DGS-1210-10P> ")
+            #print("password printed")
+        except:
+            print("Login or password error")
+        try:
+                tn.write("debug info" + "\n")
+                while True:
+                    r = tn.read_until("DGS-1210-10P> ",timeout =.2)
+                    #print(r.strip())
+                    if r.strip() =='':
+                      break
+                    f =open("telnet.txt","a")
+		    try:
+		    	fcntl.flock(f,fcntl.LOCK_EX |fcntl.LOCK_NB)
+		    except IOError:
+			print ('Cannot lock the file')
+		        sys.exit(1)
+
+                    f.write(r)
+                    f.close()
+		    fcntl.flock(f,fcntl.LOCK_UN)
+                    tn.write(" ")
+#            x = tn.read_until("--More-- ",timeout =.2)
+# 	    tn.write("debug info"+"\n")
+	    #print(x)
+	    #while 	
+	    	#tn.write("t"+"\n")
+            	#x = tn.read_until("--More-- ",timeout =.2)
+	    	#print(x)		
+        except:
+                try:
+                    x = tn.read_until("DGS-1210-10P> ")
+                except:
+                    print("Not able to get debug info")
+	 
+if __name__	== '__main__':
+	while True:
+		process()
+		time.sleep(1)
