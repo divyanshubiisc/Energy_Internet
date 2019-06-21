@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+  <Message>
+    <Header>
+      <Verb>Multicast_response</Verb>
+      <Noun>Master</Noun>
+    </Header>
+    <Body>
+      <Router_id>10:16:56:23:15:48:45</Router_id>
+      <IP_address>b8:27:eb:99:47:fc</IP_address>
+    </Body>
+  </Message>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+  <Message>
+    <Header>
+      <Verb>connect</Verb>
+      <Noun>Master</Noun>
+      <Router_id></Router_id>
+    </Header>
+    <Body>
+      <IP_address>192.168.0.104</IP_address>
+    </Body>
+  </Message>

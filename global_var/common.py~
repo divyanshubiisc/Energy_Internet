@@ -1,0 +1,13 @@
+import threading
+
+global lock
+global Load_list
+global Source_list
+global Feedback_list
+global comm_to_power_change_event
+
+comm_to_power_change_event = threading.Event()
+lock = threading.Lock()
+Load_list =[]
+Source_list=[]
+#Feedback_list=[]

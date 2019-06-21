@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+  <Message>
+    <Header>
+      <Verb>Request</Verb>
+      <Noun>Master</Noun>
+      <Router_id>20:56:45:25:34:55</Router_id>
+    </Header>
+    <Body>
+      <IP_address>192.168.0.102</IP_address>
+      <IP_address_load>192.168.0.106</IP_address_load>
+      <current>8.2</current>
+      <voltage>12</voltage>
+    </Body>
+  </Message>

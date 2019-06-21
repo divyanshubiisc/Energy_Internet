@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+  <Message>
+    <Header>
+      <Verb>query</Verb>
+      <Noun>Master</Noun>
+    </Header>
+    <Body>
+      <IP_address>192.168.0.100</IP_address>
+      <Router_id>b8:27:eb:99:47:fc</Router_id>
+    </Body>
+  </Message>

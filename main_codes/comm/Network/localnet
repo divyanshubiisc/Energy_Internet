@@ -1,0 +1,20 @@
+Interface: enp2s0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+10.114.56.1	00:6c:bc:1a:26:48	(Unknown)
+10.114.56.78	48:4d:7e:9b:16:95	(Unknown)
+10.114.56.82	b8:27:eb:99:47:fc	(Unknown)
+10.114.56.83	54:13:79:35:01:c3	(Unknown)
+10.114.56.138	b8:27:eb:99:47:fc	(Unknown)
+10.114.56.154	f0:92:1c:ee:21:76	(Unknown)
+10.114.56.171	9c:b6:54:9e:fe:d3	(Unknown)
+10.114.56.190	f8:b1:56:ac:c9:78	(Unknown)
+10.114.56.202	f4:8e:38:a9:1f:14	(Unknown)
+10.114.56.218	d4:be:d9:c9:cf:01	(Unknown)
+10.114.56.85	8c:ec:4b:c1:e3:0d	(Unknown)
+10.114.56.95	b8:27:eb:f9:22:5d	(Unknown)
+10.114.56.96	b8:27:eb:f9:22:5d	(Unknown)
+10.114.56.189	64:00:6a:6a:65:b0	(Unknown)
+10.114.56.211	f4:8e:38:a4:58:d4	(Unknown)
+
+15 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.8.1: 256 hosts scanned in 1.476 seconds (173.44 hosts/sec). 15 responded
