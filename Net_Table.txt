@@ -1,0 +1,10 @@
+Mac_Table(mac='02:42:3c:60:ca:4e', port_no=1, ip_address='')
+Mac_Table(mac='6c:c2:17:62:af:02', port_no=8, ip_address='')
+Mac_Table(mac='78:54:2e:06:f6:43', port_no=8, ip_address='192.168.0.10')
+Mac_Table(mac='78:54:2e:06:f6:4b', port_no=8, ip_address='')
+Mac_Table(mac='ac:84:c6:1f:3e:0e', port_no=8, ip_address='192.168.0.1')
+Mac_Table(mac='b8:27:eb:90:3a:96', port_no=2, ip_address='')
+Mac_Table(mac='b8:27:eb:a4:40:00', port_no=7, ip_address=u'192.168.0.100')
+Mac_Table(mac='b8:27:eb:f9:22:5d', port_no=8, ip_address='')
+Mac_Table(mac='f4:8e:38:a9:1f:14', port_no=8, ip_address='')
+dup_port 8

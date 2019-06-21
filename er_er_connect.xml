@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+  <Message>
+    <Header>
+      <Verb>post</Verb>
+      <Noun>Connect</Noun>
+      <Router_ip>192.168.0.153</Router_ip>
+    </Header>
+    <Body>
+      <ip_to>192.168.0.106</ip_to>
+      <ip_from>192.168.0.151</ip_from>
+      <port_to>2</port_to>
+      <port_from>1</port_from>
+      <current_to>0.4</current_to>
+      <current_from>0.4</current_from>
+      <voltage_to>10.0</voltage_to>
+      <voltage_from>10.0</voltage_from>
+    </Body>
+  </Message>

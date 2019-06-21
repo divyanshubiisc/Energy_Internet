@@ -1,0 +1,736 @@
+# -*- coding: utf-8 -*-
+
+#import socket
+#import select
+import sys
+import string
+from main_codes.comm import main
+from main_codes.gui import table_gui
+#sys.path.append('/home/pi/Desktop/i2c_pi/Energy_Router/')
+from global_var import setting
+from Tkinter import *
+from apscheduler.schedulers.background import BackgroundScheduler
+
+process = main.subprocess.Popen("ifconfig | grep eth0 | awk '{print $1}'", shell =True, stdout =main.subprocess.PIPE)
+try:
+    outs, errs = process.communicate()
+    print (outs)
+except:
+    process.kill()
+    outs, errs = process.communicate()
+    print(errs)
+    main.sys.exit()
+main.ni.ifaddresses('eth0') 
+
+"""For poll debuging """
+if sys.argv[1] == "debug":
+    poll_debug =False
+else:
+    poll_debug =True
+    
+
+while True:
+    try:
+        IPAddr = main.ni.ifaddresses('eth0')[main.ni.AF_INET][0]['addr']
+        ip  =IPAddr
+        setting.network_var.self_ip = IPAddr
+        break
+    except:
+        print("Interface doesnot have a  ip address")
+    
+
+print("Your Computer IP Address is:" + IPAddr) 
+   
+
+
+#sock_poll = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+poll_portno =8050       # port number for which it will sending poll request to load
+
+
+while True:
+	try:
+		pollread_portno =8010  # port number for which poll file will be received by the server
+		poll_read = main.socket.socket(main.socket.AF_INET,main.socket.SOCK_STREAM)
+		poll_read.setsockopt(main.socket.SOL_SOCKET, main.socket.SO_REUSEADDR, 1)
+		poll_read.bind((ip,int(pollread_portno)))
+		poll_read.listen(1)
+		print("Binding  completed port number 8010")
+		break
+	except main.socket_error as serr:
+		print("Socket server not created port number 8010")
+		print (serr)
+		
+list_of_clients=[]
+list_of_power_conn=[]
+
+
+""" ******************* this is for port forwading and communication with external router************************** """
+while True:
+        try:
+            power_conn_port_no = 9050
+            power_conn        = main.socket.socket(main.socket.AF_INET,main.socket.SOCK_STREAM)
+            power_conn.setsockopt(main.socket.SOL_SOCKET,main.socket.SO_REUSEADDR,1)
+            power_conn.bind((ip,int(power_conn_port_no)))
+            power_conn.listen(1)
+            break
+        except main.socket_error as serr:
+            print("Socket server not created port number 9050")
+            print (serr)
+
+def power_conn():
+    while True:
+            conn,addr= power_conn()
+            list_of_power_conn.append((conn,addr))
+
+
+    
+def queue_power_conn():
+    while True:
+        if not list_of_power_conn:
+                var =list_of_power_conn.pop()
+                t   =  threading.Thread()## write a function over here
+
+"""**************************************************************************************************************** """
+
+
+def id_generator(size =6 ,chars =string.ascii_uppercase +string.digits):
+    return  ''.join(main.random.choice(chars) for _ in range(size))
+    
+        
+
+
+""" ******************* The port number at which the router is receiving message form the power devices  **************************  """
+ 
+    
+while True:
+        try:
+            port_no = 8000
+            server = main.socket.socket(main.socket.AF_INET, main.socket.SOCK_STREAM)
+            server.setsockopt(main.socket.SOL_SOCKET, main.socket.SO_REUSEADDR, 1)
+            server.bind((ip,int(port_no)))
+            print("Binding  completed port number 8000")
+            server.listen(100)
+            break
+        except main.socket_error as serr:
+            print("Socket server not created port number 8000")
+            print (serr)    
+
+
+    
+    
+def start_conn():
+#  global list_of_ip
+  print ("We are in start conn function")
+  while True:
+ 
+    """Accepts a connection request and stores two parameters, 
+    conn which is a socket object for that user, and addr 
+    which contains the IP address of the client that just 
+    connected"""
+    conn, addr = server.accept()
+    
+    print ("WHILE__________strart_conn")
+ 
+    """Maintains a list of clients for ease of broadcasting
+    a message to all available people in the chatroom"""
+    if addr[0] in setting.network_var.list_of_ip:
+            # prints the address of the user that just connected
+            
+            print (addr[0] + " connected")
+            #message = conn.recv(4096)
+            list_of_clients.append((conn, addr))
+            # creates and individual thread for every user 
+            # that connects
+#            t1=main.threading.Thread(target=clientthread,args=(conn,addr,)) 
+#            t1.start()
+
+
+        
+            
+def queue_func():
+    
+    print ('We are queue function')
+    while True:
+        #print ("WHILE_________queue function")
+        main.time.sleep(0.5)
+        if list_of_clients:
+              print("We are in list of clients")
+              client         = list_of_clients.pop()
+              thread_id      = id_generator()
+              #print("thread_id",thread_id)
+              thread_id = main.threading.Thread(target=clientthread,args=(client[0],client[1],))
+              thread_id.daemon = True
+              thread_id.start()
+              
+"""  ***************************************************************************************  """                  
+              
+              
+### Recieves the files from the devices and classifies them into different list according to the content in the file
+def clientthread(conn, addr):
+#           global Load_list
+#           global lock
+           conn.settimeout(5)
+           print("We are in client thread")
+           global port_list
+           try:
+             message = conn.recv(4096)
+             print(message)
+           except:
+             print("The connection exited for ip:"+addr[0])
+             sys.exit()
+           s= 'receive'
+           i= str(main.random.randint(1,101))   
+           xml_1='.xml'
+           receive_xml = s+i+xml_1
+           #print(receive_xml)
+           if message:
+               f =open(receive_xml,"w")
+               message =message.decode('ASCII')
+               f.write(message)
+               f.close()
+               print ("<" + addr[0] + "> " + message )
+               ##if the file is not in correct format 
+               try:
+                   doc= main.xml.dom.minidom.parse(receive_xml)
+               except:
+                   print("The document file recived is not correct")
+                   sys.exit()
+               print(doc.nodeName)
+               print(doc.firstChild.tagName)
+               #get the list of html tag from document and print each one
+               tag_name = doc.getElementsByTagName("Verb")
+               tag_name =tag_name[0].firstChild.nodeValue.encode('utf-8')
+               #print(type(tag_name))
+               print(tag_name)
+               #post information about the port
+               if tag_name.strip() == 'post':
+                   print("It is  a post response")
+                   verb = doc.getElementsByTagName("Noun")
+                   verb = verb[0].firstChild.nodeValue.encode('utf-8')
+                   if verb.strip() == 'Load':
+                       arr = main.xml_process.Load_parse(doc)
+                       
+                       print("||##################################||###############################||")
+                       print("                                 New Load joined                       ")
+                       print("  ipaddress                         || {}                             ".format(addr[0]))
+                       print("  Load ID                            || {}                             ".format(arr[0]))
+                       print("  Type                              || {}                             ".format(arr[1]))
+                       print("  Load Value                        || {}                             ".format(arr[2]))
+                       print("  Load Voltage                      || {}                             ".format(arr[3]))
+                       print("  Load Current                      || {}                             ".format(arr[4]))
+                       print("  Minimum Voltage                   || {}                             ".format(arr[5]))
+                       print("  Maximum Voltage                   || {}                             ".format(arr[6]))
+                       print("  Minimum Current                   || {}                             ".format(arr[7]))
+                       print("  Maximum Current                   || {}                             ".format(arr[8]))
+                       print("||##################################||###############################||")
+                       x =  main.Parameter_pass.Load_mapping(main.load_param(), arr ,addr[0],"2")
+                       setting.common.lock.acquire()
+                       setting.common.Load_list.append(x)
+                       
+                       print("**********UDIT********ADD***************")
+                       print("LOAD")
+                       print vars(x)
+                       print("**********UDIT********ADD***************")
+                       
+                       
+                       print('Load list',setting.common.Load_list)
+                       setting.common.lock.release()
+                       setting.common.comm_to_power_change_event.set()
+                       #gui_load.update_load(setting.common.Load_list)
+                       #print (x[0])
+                       #t1 =main.Table(rows =x , names =('ipaddress' ,'Load ID','Type ','Load Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Required', 'Status'))
+                       main.os.remove(receive_xml)
+                       sys.exit()
+                   else:
+                       pass
+                   if verb.strip() == 'Source':
+                       arr= main.xml_process.Source_parse(doc)
+                      
+                       print("||##################################||###############################||")
+                       print("                                 New Source joined                       ")
+                       print("  ipaddress                         || {}                             ".format(addr[0]))
+                       print("  Source ID                         || {}                             ".format(arr[0]))
+                       print("  Type                              || {}                             ".format(arr[1]))
+#                       print("  Source Value                      || {}                             ".format(arr[2]))
+                       print("  Source Voltage                    || {}                             ".format(arr[2]))
+                       print("  Source Current                    || {}                             ".format(arr[3]))
+                       print("  Minimum Voltage                   || {}                             ".format(arr[4]))
+                       print("  Maximum Voltage                   || {}                             ".format(arr[5]))
+                       print("  Minimum Current                   || {}                             ".format(arr[6]))
+                       print("  Maximum Current                   || {}                             ".format(arr[7]))
+                       print("||##################################||###############################||")
+                       x =  main.Parameter_pass.Source_mapping(main.source_param(), arr ,addr[0],"1")
+                       setting.common.lock.acquire()
+                       if poll_debug:
+                           param_check  = parameter_check(x)  #to check the line voltage and see if it is under controll
+                           if param_check:
+                               setting.common.Source_list.append(x)
+                               print("The  source is appended by an element")
+                       else:
+                           setting.common.Source_list.append(x)
+                       
+                       print("**********UDIT********ADD***************")
+                       print("SOURCE")
+                       print vars(x)
+                       print("**********UDIT********ADD***************")
+                       setting.common.lock.release()
+                       setting.common.comm_to_power_change_event.set()
+                       #gui_source.update_load(setting.common.Source_list)
+                       #t2 =main.Table(rows =x , names =('ipaddress' ,'Source ID','Type ','Source Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Available', 'Status'))
+                       print("new source join source ,source list",len(setting.common.Source_list))
+                       print(setting.common.Source_list)
+                       main.os.remove(receive_xml)
+                       sys.exit()
+                   else:
+                       pass                   
+               ### to update a value of port
+               elif tag_name.strip() == 'update':
+                   print("It is update response")
+                   verb = doc.getElementsByTagName("Noun")
+                   verb = verb[0].firstChild.nodeValue.encode('utf-8')
+                   if verb.strip() == 'Load':
+                        arr = main.xml_process.Load_parse(doc)
+                        for i in setting.common.Load_list:
+                           if arr[0] == i.id:
+                               setting.common.lock.acquire()
+                               setting.common.comm_to_power_change_event.set()
+                               setting.common.Load_list[setting.common.Load_list.index(i)] = main.Parameter_pass.Load_mapping(main.load_param(), arr ,addr[0])
+                               setting.common.lock.release()
+                               #t3 =main.Table(rows =setting.common.Load_list , names =('ipaddress' ,'Load ID','Type ','Load Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Required', 'Status'))
+                               print("load list has been upated")
+                               break
+                           else:
+                               pass
+                        main.os.remove(receive_xml)
+                        sys.exit()
+                          
+                   elif verb.strip() == 'Source':
+                        arr = main.xml_process.Source_parse(doc)
+                        for i in setting.common.Source_list:
+                           if arr[0] == i.id:
+                               setting.common.lock.acquire()
+                               setting.common.Source_list[setting.common.Source_list.index(i)] = main.Parameter_pass.Source_mapping(main.source_param(), arr ,addr[0])
+                               setting.common.lock.release()
+                               #t4 =main.Table(rows =setting.common.Source_list , names =('ipaddress' ,'Source ID','Type ','Source Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Available', 'Status'))
+                               print("load list has been upated")
+                               break
+                           else:
+                               pass
+                        main.os.remove(receive_xml)
+                        sys.exit()
+               else :
+                    print("It is not a get response")
+                    
+           #main.os.remove(receive_xml)
+           message = None
+                          
+ 
+"""-------------------------------              POLL  FUNCTION                     -----------------------------------------------------------------------------    """
+def Poll():
+
+    print ("we are in poll ")
+    #print ("Load list ",setting.common.Load_list)
+    ### Poll  all the sources and loads connected to it and get there updated files ###
+    """First check the load list get the all the updated files of the  load and then get the updated files of the sources."""
+    while True:
+        if  not setting.common.Load_list:
+            pass
+            print("We are in if not condition")
+        else:
+            for i in setting.common.Load_list:
+                print("we are in poll common load list")
+                sock_poll = main.socket.socket(main.socket.AF_INET, main.socket.SOCK_STREAM)
+                #sock_poll.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                sock_poll.settimeout(2)
+                #print(vars(i))
+                print("IP address",i.ip_address )
+                print("POll port number", poll_portno)
+                try:
+                        sock_poll.connect((i.ip_address , poll_portno))
+                except main.socket_error as serr:
+                        #flag=1
+                        print(serr)
+                        print ("Load is no more connected to the poll file")
+                        setting.common.lock.acquire()
+                        setting.common.Load_list.remove(i)
+                        
+                        print("**********UDIT********DELETE***************")
+                        print("LOAD")
+                        print (i)
+                        print("**********UDIT********DELETE***************")
+                       
+                        setting.common.comm_to_power_change_event.set()
+                        del setting.network_var.list_of_mac[setting.network_var.list_of_ip.index(i.ip_address)]
+                        setting.network_var.list_of_ip.remove(i.ip_address)
+                        setting.common.lock.release()
+                        print("Below is load list")
+                        print(setting.common.Load_list)
+                        print("Below is ip_list")
+                        print(setting.network_var.list_of_ip)
+                        #gui_load.update_load(setting.common.Load_list)
+                        continue
+
+                main.xml_write.create_xml_file_poll(i.id,'poll.xml')
+                    #print("sock_poll created")
+                with open("poll.xml","r") as f:  ## to send poll file to the loads/source
+                        data= f.read()
+                        sock_poll.send(data.encode('ASCII'))
+                        sock_poll.close()
+                        #print("Load Poll file send")
+
+                #print("we are in this part of code")
+                conn , addr = poll_read.accept()
+                main.time.sleep(3)
+                message = conn.recv(4096)
+                if message:
+                    print("Load got a  poll response")
+                    f =open("poll_response.xml","w")
+                    message =message.decode('ASCII')
+                    #print (message)
+                    f.write(message)
+                    f.close()
+                    #print("Completed writing poll response")
+                    #print ("<" + addr[0] + "> " + message )
+                    ##if the file is not in correct format
+                    try:
+                        doc= main.xml.dom.minidom.parse("poll_response.xml")
+                    except:
+                        print("The document file recived is not correct")
+                        sys.exit()
+                    tag_name = doc.getElementsByTagName("Verb")
+                    tag_name = tag_name[0].firstChild.nodeValue.encode('utf-8')
+                    #print ("Before print doc",vars(doc))
+                    if tag_name.strip() == 'poll':
+                            #print("LOAD: It is update response")
+                            noun = doc.getElementsByTagName("Noun")
+                            noun = noun[0].firstChild.nodeValue.encode('utf-8')
+                            if noun.strip() == 'Load':
+                                arr = main.xml_process.Load_parse(doc)
+                                print("||##################################||###############################||")
+                                print("                                  Updated load                         ")
+                                print("  ipaddress                         || {}                             ".format(addr[0]))
+                                print("  Load ID                           || {}                             ".format(arr[0]))
+                                print("  Type                              || {}                             ".format(arr[1]))
+                                print("  Load Value                        || {}                             ".format(arr[2]))
+                                print("  Minimum Voltage                   || {}                             ".format(arr[3]))
+                                print("  Maximum Voltage                   || {}                             ".format(arr[4]))
+                                print("  Minimum Current                   || {}                             ".format(arr[5]))
+                                print("  Maximum Current                   || {}                             ".format(arr[6]))
+                                print("||##################################||###############################||")
+                                #x              = main.Parameter_pass.Source_mapping(main.source_param(), arr ,addr[0],"2")
+                                setting.common.lock.acquire()
+                                setting.common.Load_list[setting.common.Load_list.index(i)] =main.Parameter_pass.Load_mapping(main.load_param(), arr ,addr[0],"2")
+                                print("**********UDIT********UPDATE***************")
+                                print("LOAD")
+                                print (i)
+                                print("**********UDIT********UPDATE***************")
+                               
+                                setting.common.comm_to_power_change_event.set()
+                                #print("common update feedback list", setting.common.Feedback_list[1].voltage_port1)
+                                #print(setting.common.Feedback_list[0].voltage_port1)
+                                setting.common.lock.release()
+                                #t3 =main.Table(rows =setting.common.Load_list , names =('ipaddress' ,'Load ID','Type ','Load Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Required', 'Status'))
+                                main.os.remove("poll_response.xml")
+        if  not setting.common.Source_list:
+            pass
+        else:
+	    print("We are in source list")
+            for i in setting.common.Source_list:
+                try:
+                    sock_poll = main.socket.socket(main.socket.AF_INET, main.socket.SOCK_STREAM)
+                    sock_poll.connect((i.ip_address , poll_portno))
+                    main.xml_write.create_xml_source_poll(i.id,'poll.xml')
+                    #print("sock_poll created")
+                    with open("poll.xml","r") as f:  ## to send poll file to the loads/source
+                        data= f.read()
+                        sock_poll.send(data.encode('ASCII'))
+                        sock_poll.close()
+                        print("Poll file send")
+                except main.socket_error as serr:
+                        print(serr)
+                        print ("Source is no more connected to the poll file")
+                        
+                        setting.common.lock.acquire()
+                        setting.common.Source_list.remove(i)
+                        print ("Length of source list",)
+                       
+                        print("**********UDIT********DELETE***************")
+                        print("SOURCE")
+                        print (i)
+                        print("**********UDIT********DELETE***************")
+                       
+                        setting.common.comm_to_power_change_event.set()
+                        del setting.network_var.list_of_mac[setting.network_var.list_of_ip.index(i.ip_address)]
+                        setting.network_var.list_of_ip.remove(i.ip_address)
+                        setting.common.lock.release()
+                        
+                        print("Below is Source list")
+                        print(setting.common.Source_list)
+                        print("Below is ip_list")
+                        print(setting.network_var.list_of_ip)
+                        #gui_source.update_load(setting.common.Source_list)
+
+                        continue
+
+                        #del setting.common.Source_list[setting.common.Source_list.index(i)]
+                        print ("Length of source list",)
+                        #break
+                conn , addr = poll_read.accept()
+                main.time.sleep(3)
+                message = conn.recv(4096)
+                if message:
+                    print("got a  poll response")
+                    f =open("poll_response.xml","w")
+                    message =message.decode('ASCII')
+                    f.write(message)
+                    f.close()
+                    print("Completed writing poll response")
+                    try:
+                        doc= main.xml.dom.minidom.parse("poll_response.xml")
+                    except:
+                        print("The document file recived is not correct")
+                        sys.exit()
+                    tag_name = doc.getElementsByTagName("Verb")
+                    tag_name = tag_name[0].firstChild.nodeValue.encode('utf-8')
+                    if tag_name.strip() == 'poll':
+                            print("It is source  update response")
+                            noun = doc.getElementsByTagName("Noun")
+                            noun = noun[0].firstChild.nodeValue.encode('utf-8')
+                            if noun.strip() == 'Source':
+                                arr = main.xml_process.Source_parse(doc)
+                                print("||##################################||###############################||")
+                                print("                                  Updated Source                        ")
+                                print("  ipaddress                         || {}                             ".format(addr[0]))
+                                print("  Source ID                         || {}                             ".format(arr[0]))
+                                print("  Type                              || {}                             ".format(arr[1]))
+                                print("  Source Value                      || {}                             ".format(arr[2]))
+                                print("  Minimum Voltage                   || {}                             ".format(arr[3]))
+                                print("  Maximum Voltage                   || {}                             ".format(arr[4]))
+                                print("  Minimum Current                   || {}                             ".format(arr[5]))
+                                print("  Maximum Current                   || {}                             ".format(arr[6]))
+                                print("||##################################||###############################||")
+                                x              = main.Parameter_pass.Source_mapping(main.source_param(), arr ,addr[0],"1")
+                                setting.common.lock.acquire()
+                                if poll_debug:
+                                    param_check  = parameter_check(x)
+                                    if not param_check:
+                                        del setting.common.Source_list[setting.common.Source_list.index(i)]
+                                        print("Source has been removed from the source list")
+                                    else:
+                                        setting.common.Source_list[setting.common.Source_list.index(i)] = x
+                                        
+                                else:
+                                    setting.common.Source_list[setting.common.Source_list.index(i)] = x
+                                #setting.common.comm_to_power_change_event.set()
+                               
+                                print("**********UDIT********UPDATE***************")
+                                print("SOUREC")
+                                print (x)
+                                print("**********UDIT********UPDATE***************")
+                               
+                                setting.common.comm_to_power_change_event.set()
+                                setting.common.lock.release()
+                                #t4 =main.Table(rows =setting.common.Source_list , names =('ipaddress' ,'Source ID','Type ','Source Value ','Minimum Voltage','Maximum Voltage ','Minimum Current ','Maximum Current','Current Available', 'Status'))
+                                main.os.remove("poll_response.xml")
+                else:
+                    print("Nothing in message")
+	main.time.sleep(2)
+
+### send_initial_conf is for creating network table and sending intial configuration file
+
+def send_initial_conf():
+      global Net_Table_present
+      global Net_Table_previous
+      global admin
+      global Host
+      global router_table
+      send_port_number =8050   ### it is same as poll port number
+      port_check =False
+      print("we are in send intial config")
+      while True:
+	dup_port                     = []
+        #print("S_________Line before Net table")
+	Net_Table_present , dup_port = main.telnet.telnet_update(Host,admin,IPAddr)  #to get the mac addresses of all the loads connected to switch
+        #print("S_________in initial config before for loop")
+        #print ("**************************************")
+        #print ("[Net_Table_present]")
+        #for net in Net_Table_present:
+            #print (net)
+        #print ("**************************************")
+	for net in Net_Table_present:
+                		#print ("[setting.network_var.list_of_ip]",setting.network_var.list_of_ip)
+	                        #print ("[mac address]",setting.network_var.list_of_mac)
+				if ((net.ip_address not in  setting.network_var.list_of_ip) and (net.mac not in setting.network_var.list_of_mac)) and (net.port_no not in dup_port):
+                                  print(net.ip_address)
+                                  print(net.mac)
+                     		  #port_check  = device_connect(net.port_no)
+				  port_check  = True
+				  #  if device is connected to port electrically only then it will communicate
+				  if port_check:
+                      			print ("connect file  send for port number",net.port_no)
+					try:
+						sock_initial = main.socket.socket(main.socket.AF_INET, main.socket.SOCK_STREAM)
+						sock_initial.connect((net.ip_address , send_port_number))
+						with open("connect.xml","r") as f:  ## to send poll file to the loads/source
+							data= f.read()
+							sock_initial.send(data.encode('ASCII'))
+							sock_initial.close()
+							setting.common.lock.acquire()
+							setting.network_var.list_of_ip.append(net.ip_address)
+                            				setting.network_var.switch_table.append((net.ip_address,net.port_no))
+							setting.network_var.list_of_mac.append(net.mac)
+        			                        #print('setting.common.Feedback_list[0].voltage_port2',setting.common.Feedback_list[0].voltage_port2)
+							#print('setting.common.Feedback_list[1].voltage_port2',setting.common.Feedback_list[1].voltage_port2) 
+							#if setting.common.Feedback_list[0].voltage_port2 > 3:
+													#	print("common feedback list",setting.common.Feedback_list[1].voltage_port2)
+							setting.common.lock.release()
+                               				#main.time.sleep(1)
+					except main.socket_error as serr:
+                                                        pass
+                                        if net.mac not in setting.network_var.mac_address_not_reacable:
+                                            setting.network_var.mac_address_not_reacable.append(net.mac)
+                                        continue
+
+			#Net_Table_previous =Net_Table_present
+			## include uart function to send data
+	Net_Table_previous= Net_Table_present
+		#print(Net_Table_present)
+	if  Net_Table_present :
+                 router_table.update(Net_Table_present)
+                 pass
+		 main.time.sleep(2)
+
+
+""" To check if any device is actually connected to a given  port  """
+def device_connect(port_no):
+    if (port_no == 2) or (port_no==6):
+    	if  setting.common.Feedback_list[0].voltage_port2 > 3:
+        	return True
+    	else:
+        	return False
+    else:
+	return False	                  
+
+"""  To check the parameter given by the source or load is correct. """
+def parameter_check(x):
+     port = ip_to_port(x.ip_address)
+     #print ("The port for ip is ",port)
+     if port is None:
+         return False
+     else:
+         if (x.max_volt is not None) and (x.min_volt is not None) :
+           print(1)
+           if (float(x.max_volt) >  setting.common.Feedback_list[0].voltage_port2) and (float(x.min_volt) < setting.common.Feedback_list[0].voltage_port2 ):
+               return True
+           else: 
+               return False
+         elif (x.max_volt is None) and (x.min_volt is not None):
+             print(2)
+             if (float(x.min_volt) < setting.common.Feedback_list[0].voltage_port2) and  (setting.common.Feedback_list[0].voltage_port2 < (float(x.voltage)+0.5)):
+                 return True
+             else:
+                 False
+         elif  (x.max_volt is not None) and (x.min_volt is None):
+             print(3)
+             if ((float(x.voltage)-0.5) < setting.common.Feedback_list[0].voltage_port2) and  (setting.common.Feedback_list[0].voltage_port2 < float(x.max_volt)):
+                 return True
+             else:
+                 return False
+         elif (x.max_volt is None) and (x.min_volt is None):
+             print(4)
+             if ((float(x.voltage) -0.5) < setting.common.Feedback_list[0].voltage_port2) and (setting.common.Feedback_list[0].voltage_port2 < (float(x.voltage)+0.5)):
+                 return True
+             else:
+                 return False
+         else:
+             return False
+     
+
+
+"""  It return port number for an ip address """
+def ip_to_port(ip):
+    for net in setting.network_var.switch_table:
+        if net[0] == ip:
+            return net[1]
+    return None
+
+def sys_exit():
+  global schedular
+  while True:
+          message = sys.stdin.readline()
+          if message.strip() == "exit":
+              #schedular.shutdown()
+              main.os._exit(0)
+          else:
+              pass
+
+def gui():
+    root = Tk()
+    root.wm_title("multicolumn ListBox")
+    global router_table
+    global gui_load
+    global gui_source
+    router_table = table_gui.McListBox(['mac' ,'port no','ip address'],[])
+    gui_source = table_gui.McListBox(['ip address' ,'id ','type','value'],[])
+    gui_load = table_gui.McListBox(['ip address' ,'id ','type','value'],[])
+    root.mainloop()
+
+
+def gui_source_list():
+    #root =Tk()
+    #root.wm_title("Source source list")
+    global gui_source
+    gui_source = table_gui.McListBox(['ip address' ,'id ','type','value'],[])
+    #root.mainloop()
+    
+def gui_load_list(): 
+    #root =Tk()
+    #root.wm_title("Load source list")
+    global gui_load
+    gui_load = table_gui.McListBox(['ip address' ,'id ','type','value'],[])
+    #root.mainloop()
+
+def start_receive():
+  global Host
+  global Mac
+  global ip_addr,netmask
+  global Mac_Table
+  global Net_Table_present
+  global Net_Table_previous
+  global admin
+  #global schedular
+  #schedular = BackgroundScheduler(timezone ='utc')
+  #schedular.add_job(Poll,'interval',id='Poll',seconds=10)
+  #schedular.add_job(start_conn, 'interval', id='start_conn', seconds=10)
+  t0=main.threading.Thread(target=sys_exit,args=[])
+  t0.start()
+  t1 = main.threading.Timer(30,Poll,args=[])
+  t2 = main.threading.Timer(3,start_conn,args=[])
+  t3 = main.threading.Timer(3,send_initial_conf, args=[])
+  t4 = main.threading.Timer(3,gui,args=[])
+  t5 = main.threading.Timer(2,queue_func,args=[])
+#  t5 = main.threading.Timer(10,gui_source_list)
+#  t6 = main.threading.Timer(10,gui_load_list)
+  admin ="admin"  # user name of switch
+  Host = "192.168.0.50" #ip address of the switch
+  Mac   =  main.namedtuple("Mac_Table" , "mac port_no ip_address") # required attibute for the mac table of the switch
+  Mac_Table=[]  #Mac table for storing the value of mac address and it's corresponding
+  ip_addr,netmask = main.network.initial_conf() # get the ip address and the netmask for the system
+  main.network.ARP_scan() #do arp ping to get the ip address and the mac address of all the system in the network
+  Net_Table_present = []
+  Net_Table_previous= []
+  main.xml_write.create_xml_file_connect('connect.xml',main.network.Self_Mac(),ip_addr)
+  #schedular.start()
+  t2.start()
+  t3.start()
+  t4.start()
+  t5.start()
+  t1.start()
+#  t6.start()
+if __name__ == "__main__":
+	
+  start_receive()
+  while True:
+	  main.time.sleep(5)
+	  pass
+  

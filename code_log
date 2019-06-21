@@ -1,0 +1,1938 @@
+eth0:
+
+Your Computer IP Address is:192.168.0.106
+Binding  completed port number 8010
+Binding  completed port number 8000
+[<global_var.parameters.fb_var instance at 0x738db710>]
+[<global_var.parameters.fb_var instance at 0x738db710>, <global_var.parameters.fb_var instance at 0x738db878>]
+[<global_var.parameters.fb_var instance at 0x738db710>, <global_var.parameters.fb_var instance at 0x738db878>, <global_var.parameters.fb_var instance at 0x738db8a0>]
+
+Battery_thread_started
+
+slave_poll_thread_started
+Sending poll thread
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.181691381835936, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.762806396484374, 'voltage_port2': 12.610738916015624, 'current_port1': 0.0, 'current_port2': 0.0}
+We are queue function
+We are in start conn function
+we are in send intial config
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.203415307617187, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.66504873046875, 'voltage_port2': 12.518412231445312, 'current_port1': 0.0, 'current_port2': 0.0}
+Mac Table getting updated ........
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.176260400390623, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.675910693359373, 'current_port1': 0.0, 'current_port2': 0.0}
+('connect file  send for port number', 1)
+('connect file  send for port number', 2)
+--------------------------Net table Present----------------------------------------------------------
+WHILE__________strart_conn
+192.168.0.103 connected
+We are in list of clients
+We are in client thread
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+<192.168.0.103> <?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+#document
+Message
+ post 
+It is  a post response
+||##################################||###############################||
+                                 New Load joined                       
+  ipaddress                         || 192.168.0.103                             
+  Load ID                            || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Load Voltage                      || 12.5                             
+  Load Current                      || 0.4                             
+  Minimum Voltage                   || None                             
+  Maximum Voltage                   || None                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+The  source is appended by an element
+**********UDIT********ADD***************
+LOAD
+{'current_reqd': 0.4, 'max_curr': None, 'min_volt': None, 'actual_curr': 0, 'max_volt': None, 'ip_address': '192.168.0.103', 'value': '1000', 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'voltage': 12.5, 'type': 'reistive', 'port': '2'}
+**********UDIT********ADD***************
+('Load list', [<global_var.parameters.load_param instance at 0x6d5f8558>])
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[]
+SOURCE
+[]
+[]
+Inside port_off function
+*************************************
+LOAD
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d5f8580>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.67047971191406, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.143674511718748, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.675910693359373, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.632462841796873, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.632462841796873, 'voltage_port2': 12.60530793457031, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.181691381835936, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.599876953125, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll 
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.187122363281249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.534705175781248, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Load got a  poll response
+('entry.port_no', 2)
+True
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.62160087890625)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d5f8558>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d5f8580>]
+<global_var.parameters.load_param instance at 0x6d5f8580>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d5f8580>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d614d00>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.58358400878906, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.66504873046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d614d50>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d614d00>]
+<global_var.parameters.load_param instance at 0x6d614d00>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d614d00>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d601490>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.599876953125, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.62160087890625)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d6014b8>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d601490>]
+<global_var.parameters.load_param instance at 0x6d601490>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d601490>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d601a58>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.675910693359373, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.187122363281249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.632462841796873, 'voltage_port2': 12.529274194335937, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.181691381835936, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.518412231445312, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d5f8580>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d601a58>]
+<global_var.parameters.load_param instance at 0x6d601a58>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d601a58>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d61ad28>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.610738916015624, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.66504873046875, 'voltage_port2': 12.197984326171873, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.502119287109373, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.66504873046875)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d6141c0>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d61ad28>]
+<global_var.parameters.load_param instance at 0x6d61ad28>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d61ad28>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d616530>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.176260400390623, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.67047971191406, 'voltage_port2': 12.60530793457031, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.616169897460937)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d61a6c0>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d616530>]
+<global_var.parameters.load_param instance at 0x6d616530>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616530>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d616c88>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.100226660156249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.187122363281249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.616169897460937, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.681341674804687, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.176260400390623, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': ('entry.port_no', 212.675910693359373, 'current_port1': 0.0, 'current_port2': 0.0)}
+True
+
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Load got a  poll response
+||##################################||###############################||
+                                  Updated load                         
+  ipaddress                         || 192.168.0.103                             
+  Load ID                           || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Minimum Voltage                   || 12.5                             
+  Maximum Voltage                   || 0.4                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.60530793457031)
+**********UDIT********UPDATE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d61aee0>
+**********UDIT********UPDATE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d616c88>]
+<global_var.parameters.load_param instance at 0x6d616c88>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+GLOBAL_I0
+DELETE: User ID Matched
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616c88>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d616260>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.675910693359373, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51('entry.port_no', 2)
+{'voltage_port1'
+True
+: 12.60530793457031, 'voltage_port2': 12.197984326171873, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.545567138671874, 'voltage_port2': 12.60530793457031, 'current_port1': 0.0, 'current_port2': 0.0}
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+we are in poll common load list
+('IP address', '192.168.0.103')
+('POll port number', 8050)
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('connect file  send for port number', 1)
+--------------------------Net table Present----------------------------------------------------------
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+('entry.port_no', 2)
+True
+Mac Table getting updated ........
+('entry.port_no', 2)
+True
+timed out
+Load is no more connected to the poll file
+**********UDIT********DELETE***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616288>
+**********UDIT********DELETE***************
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d616260>]
+<global_var.parameters.load_param instance at 0x6d616260>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616260>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('slave', 50)
+('slave', 51)
+('slave', 52)
+___________________After LOOP________________________
+LOAD
+SOURCE
+*************************************************
+Below is load list
+[]
+Below is ip_list
+[]
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.60530793457031, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.121950585937498, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.599876953125, 'voltage_port2': 12.187122363281249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.60530793457031, 'current_port1': 0.0, 'current_port2': 0.0}
+--------------------------Net table Present----------------------------------------------------------
+We are in if not condition
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.561860083007812, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+--------------------------Net table Present----------------------------------------------------------
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.540136157226561, 'voltage_port2': 12.121950585937498, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.197984326171873, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.637893823242186, 'voltage_port2': 12.675910693359373, 'current_port1': 0.0, 'current_port2': 0.0}
+Mac Table getting updated ........
+We are in if not condition
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.165398437499999, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.523843212890624, 'current_port1': 0.0, 'current_port2': 0.0}
+('connect file  send for port number', 3)
+--------------------------Net table Present----------------------------------------------------------
+WHILE__________strart_conn
+192.168.0.103 connected
+We are in list of clients
+We are in client thread
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+<192.168.0.103> <?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+#document
+Message
+ post 
+It is  a post response
+||##################################||###############################||
+                                 New Load joined                       
+  ipaddress                         || 192.168.0.103                             
+  Load ID                            || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Load Voltage                      || 12.5                             
+  Load Current                      || 0.4                             
+  Minimum Voltage                   || None                             
+  Maximum Voltage                   || None                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.627031860351561)
+The  source is appended by an element
+**********UDIT********ADD***************
+LOAD
+{'current_reqd': 0.4, 'max_curr': None, 'min_volt': None, 'actual_curr': 0, 'max_volt': None, 'ip_address': '192.168.0.103', 'value': '1000', 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'voltage': 12.5, 'type': 'reistive', 'port': '2'}
+**********UDIT********ADD***************
+('Load list', [<global_var.parameters.load_param instance at 0x6d616198>])
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[]
+SOURCE
+[]
+[]
+Inside port_off function
+*************************************
+LOAD
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d6161e8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 3)
+**********Network_polling ********   DELETE LOAD  ***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616198>
+**********Network_polling  ********DELETE LOAD  ***************
+Below is load list
+[]
+Below is ip_list
+[]
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d6161e8>]
+<global_var.parameters.load_param instance at 0x6d6161e8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d6161e8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('slave', 50)
+('slave', 51)
+('slave', 52)
+___________________After LOOP________________________
+LOAD
+SOURCE
+*************************************************
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.187122363281249, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.627031860351561, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+We are in if not condition
+('connect file  send for port number', 3)
+--------------------------Net table Present----------------------------------------------------------
+WHILE__________strart_conn
+192.168.0.103 connected
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.094795678710936, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.51298125, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in list of clients
+We are in client thread
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+<192.168.0.103> <?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+#document
+Message
+ post 
+It is  a post response
+||##################################||###############################||
+                                 New Load joined                       
+  ipaddress                         || 192.168.0.103                             
+  Load ID                            || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Load Voltage                      || 12.5                             
+  Load Current                      || 0.4                             
+  Minimum Voltage                   || None                             
+  Maximum Voltage                   || None                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+The  source is appended by an element
+**********UDIT********ADD***************
+LOAD
+{'current_reqd': 0.4, 'max_curr': None, 'min_volt': None, 'actual_curr': 0, 'max_volt': None, 'ip_address': '192.168.0.103', 'value': '1000', 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'voltage': 12.5, 'type': 'reistive', 'port': '2'}
+**********UDIT********ADD***************
+('Load list', [<global_var.parameters.load_param instance at 0x6d616080>])
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[]
+SOURCE
+[]
+[]
+Inside port_off function
+*************************************
+LOAD
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d6160a8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 3)
+**********Network_polling ********   DELETE LOAD  ***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d616080>
+**********Network_polling  ********DELETE LOAD  ***************
+Below is load list
+[]
+Below is ip_list
+[]
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d6160a8>]
+<global_var.parameters.load_param instance at 0x6d6160a8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d6160a8>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('slave', 50)
+('slave', 51)
+('slave', 52)
+___________________After LOOP________________________
+LOAD
+SOURCE
+*************************************************
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.2088462890625, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.540136157226561, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+('connect file  send for port number', 3)
+--------------------------Net table Present----------------------------------------------------------
+WHILE__________strart_conn
+192.168.0.103 connected
+We are in list of clients
+We are in client thread
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+<192.168.0.103> <?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+#document
+Message
+ post 
+It is  a post response
+||##################################||###############################||
+                                 New Load joined                       
+  ipaddress                         || 192.168.0.103                             
+  Load ID                            || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Load Voltage                      || 12.5                             
+  Load Current                      || 0.4                             
+  Minimum Voltage                   || None                             
+  Maximum Voltage                   || None                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+The  source is appended by an element
+**********UDIT********ADD***************
+LOAD
+{'current_reqd': 0.4, 'max_curr': None, 'min_volt': None, 'actual_curr': 0, 'max_volt': None, 'ip_address': '192.168.0.103', 'value': '1000', 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'voltage': 12.5, 'type': 'reistive', 'port': '2'}
+**********UDIT********ADD***************
+('Load list', [<global_var.parameters.load_param instance at 0x6d61a800>])
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[]
+SOURCE
+[]
+[]
+Inside port_off function
+*************************************
+LOAD
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d6011c0>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 3)
+**********Network_polling ********   DELETE LOAD  ***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d61a800>
+**********Network_polling  ********DELETE LOAD  ***************
+Below is load list
+[]
+Below is ip_list
+[*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[<global_var.parameters.load_param instance at 0x6d6011c0>]
+<global_var.parameters.load_param instance at 0x6d6011c0>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d6011c0>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('slave', 50)
+('slave', 51)
+('slave', 52)
+___________________After LOOP________________________
+LOAD
+SOURCE
+*************************************************
+]
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.66504873046875, 'voltage_port2': 12.111088623046875, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.66504873046875, 'voltage_port2': 12.176260400390623, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.632462841796873, 'voltage_port2': 12.616169897460937, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.197984326171873, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.534705175781248, 'current_port1': 0.0, 'current_port2': 0.0}
+('connect file  send for port number', 3)
+--------------------------Net table Present----------------------------------------------------------
+WHILE__________strart_conn
+192.168.0.103 connected
+We are in list of clients
+We are in client thread
+<?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+<192.168.0.103> <?xml version="1.0" encoding="UTF-8"?>
+<Message>
+	<Header>
+		<Verb> post </Verb>
+		<Noun> Load</Noun>
+		<id>  1024 </id>
+	</Header>
+	<Body>
+		<type> reistive </type>
+		<value> 1000 </value>
+		<voltage> 12.5 </voltage>
+		<current> 0.4 </current>
+	</Body>
+</Message>
+
+#document
+Message
+ post 
+It is  a post response
+||##################################||###############################||
+                                 New Load joined                       
+  ipaddress                         || 192.168.0.103                             
+  Load ID                            || 1024                             
+  Type                              || reistive                             
+  Load Value                        || 1000                             
+  Load Voltage                      || 12.5                             
+  Load Current                      || 0.4                             
+  Minimum Voltage                   || None                             
+  Maximum Voltage                   || None                             
+  Minimum Current                   || None                             
+  Maximum Current                   || None                             
+||##################################||###############################||
+-------------------------parameter_check-----------------------
+4
+('port_no', 2)
+('Voltage at the port', 12.610738916015624)
+The  source is appended by an element
+**********UDIT********ADD***************
+LOAD
+{'current_reqd': 0.4, 'max_curr': None, 'min_volt': None, 'actual_curr': 0, 'max_volt': None, 'ip_address': '192.168.0.103', 'value': '1000', 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'voltage': 12.5, 'type': 'reistive', 'port': '2'}
+**********UDIT********ADD***************
+('Load list', [<global_var.parameters.load_param instance at 0x6d614eb8>])
+*************************************************
+______________ ____Before LOOP_______________________
+LOAD
+[]
+SOURCE
+[]
+[]
+Inside port_off function
+*************************************
+LOAD
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('***********_________ local_load_list[rows].actual_curr_________ ***********', 0.4)
+Entered state switch containing local loads
+___________________After LOOP________________________
+LOAD
+<global_var.parameters.load_param instance at 0x6d614d78>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************************
+('entry.port_no', 3)
+**********Network_polling ********   DELETE LOAD  ***************
+LOAD
+<global_var.parameters.load_param instance at 0x6d614eb8>
+**********Network_polling  ********DELETE LOAD  ***************
+Below is load list
+[]
+Below is ip_list*************************************************
+______________ ____Before LOOP_______________________
+[]
+
+LOAD
+[<global_var.parameters.load_param instance at 0x6d614d78>]
+<global_var.parameters.load_param instance at 0x6d614d78>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+LOCAL_I0
+[]
+[]
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+Inside port_off function
+*************************************
+LOAD
+<global_var.parameters.load_param instance at 0x6d614d78>
+{'max_curr': None, 'min_volt': None, 'actual_curr': 0.4, 'max_volt': None, 'ip_address': '192.168.0.103', 'current_reqd': 0.4, 'id': '1024', 'current': '0.4', 'state': 1, 'min_curr': None, 'value': '1000', 'type': 'reistive', 'port': '2', 'voltage': 12.5}
+SOURCE
+*************************************
+In the loop for changing the state of the switches
+c
+('slave', 50)
+('slave', 51)
+('slave', 52)
+___________________After LOOP________________________
+LOAD
+SOURCE
+*************************************************
+We are in if not condition
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.116519604492186, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.60530793457031, 'voltage_port2': 12.176260400390623, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.599876953125, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+('connect file  send for port number', 3)
+--------------------------Net table Present----------------------------------------------------------
+Mac Table getting updated ........
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.610738916015624, 'voltage_port2': 12.121950585937498, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.616169897460937, 'voltage_port2': 12.192553344726562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.627031860351561, 'voltage_port2': 12.529274194335937, 'current_port1': 0.0, 'current_port2': 0.0}
+We are in if not condition
+We are in if not condition
+('slave', 50)
+************* poll slave thread******************
+50
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.105657641601562, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 51)
+************* poll slave thread******************
+51
+{'voltage_port1': 12.62160087890625, 'voltage_port2': 12.203415307617187, 'current_port1': 0.0, 'current_port2': 0.0}
+('slave', 52)
+************* poll slave thread******************
+52
+{'voltage_port1': 12.51298125, 'voltage_port2': 12.58358400878906, 'current_port1': 0.0, 'current_port2': 0.0}
+--------------------------Net table Present----------------------------------------------------------
+Mac Table getting updated ........
+We are in if not condition
+('slave', 50)
+************* poll slave thread*****************
